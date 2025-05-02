@@ -1,17 +1,16 @@
 def all_thing_is_obj(object: any) -> int:
-    if object == ["Hello", "tata!"]:
-        print("List : <class 'list'>")
-    elif object == ("Hello", "toto!"):
-        print("Tuple : <class 'tuple'>")
-    elif object ==  {"Hello", "tutu!"}:
-        print("Set : <class 'set'>")
-    elif object ==  {"Hello" : "titi!"}:
-        print("Dict : <class 'dict'>")
-    elif object == "Brian":
-        print("Brian is in the kitchen : <class 'str'>")
-    elif object == "Toto":
-        print("Toto is in the kitchen : <class 'str'>")
+    object_type =  str(type(object))
+    if isinstance(object, list):
+        display = "List : " + object_type
+    elif isinstance(object, tuple):
+        display = "Tuple : " + object_type
+    elif isinstance(object, set):
+        display = "Set : " + object_type
+    elif isinstance(object, dict):
+        display = "Dict : " + object_type
+    elif isinstance(object, str):
+        display = object + " is in the kitchen : " + object_type
     else:
-        print("Type not found")
-
+        display = "Type not found"
+    print(display)
     return 42
