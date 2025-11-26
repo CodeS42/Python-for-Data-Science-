@@ -8,11 +8,12 @@ This package contains the ‘count_in_list’ function:
 
 ## Installation
 To install this package, you can use the command:
-```pip install ./dist/ft_package-0.0.1.tar.gz```
-or:
-```pip install ./dist/ft_package-0.0.1-py3-none-any.whl```
+```pip install ./dist/ft_package-0.0.1.tar.gz``` or ```pip install ./dist/ft_package-0.0.1-py3-none-any.whl```.
 
 ## Usage
 To use this package, simply import its functions into any Python script:
-```from ft_package import count_in_list
-print(count_in_list(["toto", "tata", "toto"], "toto"))```
+```python
+from ft_package import count_in_list
+
+print(count_in_list(["toto", "tata", "toto"], "toto"))
+print(count_in_list(["toto", "tata", "toto"], "tutu"))
