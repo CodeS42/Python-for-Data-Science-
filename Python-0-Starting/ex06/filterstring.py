@@ -14,13 +14,19 @@ def valid_arguments(args):
 def main():
     try:
         if not len(sys.argv) == 3 or not valid_arguments(sys.argv[1:]):
-            raise AssertionError("AssertionError: the arguments are bad")
+            raise AssertionError("the arguments are bad")
         N = int(sys.argv[2])
-        S = str(sys.argv[1]).split()
-        filterstring = lambda word: len(word) > N
-        print(ft_filter(filterstring, S))
+        string = str(sys.argv[1])
+        S = string.split()
+        for elem in S:
+            if not elem.isalnum():
+                raise ValueError("the string contains forbidden characters")
+        print(ft_filter(lambda word: len(word) > N, S))
     except AssertionError as e:
-        print(e)
+        print(f"AssertionError: {e}")
+    except ValueError as e:
+        print(f"ValueError: {e}")
+
 
 if __name__ == "__main__":
     main()
