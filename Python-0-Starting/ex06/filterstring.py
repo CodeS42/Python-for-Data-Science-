@@ -1,6 +1,7 @@
 import sys
 from ft_filter import ft_filter
 
+
 def valid_arguments(args):
     try:
         int(sys.argv[2])
@@ -8,6 +9,7 @@ def valid_arguments(args):
     except ValueError:
         return False
     return True
+
 
 def main():
     try:
