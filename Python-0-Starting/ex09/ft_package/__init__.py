@@ -1,1 +1,2 @@
-from .utils import count_in_list
+def count_in_list(lst, elem):
+    return lst.count(elem)
