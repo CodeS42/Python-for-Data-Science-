@@ -1,17 +1,16 @@
 def NULL_not_found(object: any) -> int:
-    object_type =  str(type(object))
     if isinstance(object, float):
-        display = "Cheese: "+ str(object) + " " + object_type
+        display = f"Cheese: {object} {type(object)}"
     elif isinstance(object, bool):
-        display = "Fake: " + str(object) + " " + object_type
+        display = f"Fake: {object} {type(object)}"
     elif isinstance(object, int):
-        display = "Zero: " + str(object) + " " + object_type
+        display = f"Zero: {object} {type(object)}"
     elif object is None:
-        display = "Nothing: " + str(object) + " " + object_type
-    elif isinstance(object, str) and object == '':
-        display = "Empty: " + object_type
+        display = f"Nothing: {object} {type(object)}"
+    elif isinstance(object, str) and not object:
+        display = f"Empty: {type(object)}"
     else:
-        display = "Type not found"
+        display = "Type not Found"
         
     print(display)
     return 1
