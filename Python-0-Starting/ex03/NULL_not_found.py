@@ -12,6 +12,6 @@ def NULL_not_found(object: any) -> int:
     else:
         print("Type not Found")
         return 1
-        
+
     print(display)
     return 0

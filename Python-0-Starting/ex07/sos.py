@@ -43,8 +43,6 @@ NESTED_MORSE = {
 
 
 def wrong_character(S):
-    if not S:
-        return True
     for c in S:
         if not c.isalpha() and not c.isdigit() and not c.isspace():
             return True
@@ -64,12 +62,15 @@ def convert_string(S):
 
 def main():
     try:
-        if len(sys.argv) != 2 or wrong_character(sys.argv[1]):
-            raise AssertionError("AssertionError: the arguments are bad")
-
+        if len(sys.argv) != 2:
+            raise AssertionError("the arguments are bad")
+        if not sys.argv[1]:
+            raise AssertionError("the string cannot be empty")
+        if wrong_character(sys.argv[1]):
+            raise AssertionError("the arguments are bad")
         print(convert_string(sys.argv[1]))
     except AssertionError as e:
-        print(e)
+        print(f"AssertionError: {e}")
 
 
 if __name__ == "__main__":

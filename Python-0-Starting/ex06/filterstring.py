@@ -18,14 +18,14 @@ def main():
         N = int(sys.argv[2])
         string = str(sys.argv[1])
         S = string.split()
+        if not S:
+            raise AssertionError("string does not contain any words")
         for elem in S:
             if not elem.isalnum():
-                raise ValueError("the string contains forbidden characters")
+                raise AssertionError("string contains forbidden characters")
         print(ft_filter(lambda word: len(word) > N, S))
     except AssertionError as e:
         print(f"AssertionError: {e}")
-    except ValueError as e:
-        print(f"ValueError: {e}")
 
 
 if __name__ == "__main__":
