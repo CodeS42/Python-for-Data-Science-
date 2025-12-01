@@ -2,6 +2,9 @@ from PIL import Image
 from numpy import array
 
 def ft_load(path: str) -> array:
+    """
+
+    """
     try:
         if not isinstance(path, str):
             raise TypeError("Path must be a string.")

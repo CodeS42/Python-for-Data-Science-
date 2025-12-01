@@ -1,7 +1,11 @@
 from PIL import Image
 from numpy import array
 
+
 def ft_load(path: str) -> array:
+    """
+
+    """
     try:
         if not isinstance(path, str):
             raise TypeError("Path must be a string.")
@@ -17,7 +21,11 @@ def ft_load(path: str) -> array:
         print("Error: ", e)
         return None
 
+
 def main():
+    """
+
+    """
     # Test subject
     print(ft_load("landscape.jpg"))
     print()

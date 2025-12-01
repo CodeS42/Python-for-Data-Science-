@@ -1,6 +1,10 @@
-import numpy
+import numpy as np
 
-def is_valid_2d_array(family) -> bool:
+
+def is_valid_2d_array(family):
+    """
+
+    """
     if not family:
         print("Error: Array cannot be empty.")
         return False
@@ -17,20 +21,28 @@ def is_valid_2d_array(family) -> bool:
             return False
     return True
 
+
 def slice_me(family: list, start: int, end: int) -> list:
+    """
+
+    """
     if not (isinstance(start, int) and isinstance(end, int)):
         print("Error: Start and end must be integers.")
         return None
     if not is_valid_2d_array(family):
         return None
-    family_array = numpy.array(family)
+    family_array = np.array(family)
     print(f"My shape is : {family_array.shape}")
-    new_family_array = numpy.array(family[start:end])
+    new_family_array = np.array(family[start:end])
     print(f"My new shape is : {new_family_array.shape}")
 
     return family[start:end]
 
+
 def main():
+    """
+
+    """
     # Tests subject
     family = [[1.80, 78.4],
             [2.15, 102.7],
@@ -69,6 +81,7 @@ def main():
     family = []
     slice_me(family, 0, 2)
     print()
+
 
 if __name__ == "__main__":
     main()

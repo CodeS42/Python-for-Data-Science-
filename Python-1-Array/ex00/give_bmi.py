@@ -11,7 +11,11 @@ BMI = 2
 
 import numpy
 
-def is_valid_list(lst, data) -> bool:
+
+def is_valid_list(lst, data):
+    """
+
+    """
     if not lst:
         print("Error: Lists cannot be empty.")
         return False
@@ -30,7 +34,11 @@ def is_valid_list(lst, data) -> bool:
             return False
     return True
 
+
 def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int | float]:
+    """
+
+    """
     if not (is_valid_list(height, HEIGHT) and is_valid_list(weight, WEIGHT)):
         return None
     if not (len(weight) == len(height)):
@@ -48,6 +56,9 @@ def give_bmi(height: list[int | float], weight: list[int | float]) -> list[int |
 
 
 def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
+    """
+
+    """
     if not is_valid_list(bmi, BMI):
         return None
     if not isinstance(limit, int):
@@ -63,6 +74,9 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
 
 
 def main():
+    """
+
+    """
     # Tests subject
     height = [2.71, 1.15]
     weight = [165.3, 38.4]
@@ -115,6 +129,7 @@ def main():
     # Limit is out of range
     bmi = [18.5]
     apply_limit(bmi, 2)
+
 
 if __name__ == "__main__":
     main()
