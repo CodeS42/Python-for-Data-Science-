@@ -26,5 +26,6 @@ def ft_load(path: str) -> array:
     if not (format_img == "JPG" or format_img == "JPEG"):
         raise ValueError("Unsupported format.")
     img = img.convert("RGB")
+    img_array = array(img)
 
-    return array(img)
+    return img_array
