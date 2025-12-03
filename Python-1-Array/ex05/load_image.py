@@ -5,6 +5,9 @@ def ft_load(path: str) -> array:
     """
     Load an image from the given file path.
     Convert it to RGB.
+    Prints
+        - The shape of the loaded image (height, width, channels).
+        - The 3D array
 
     Parameters
         path: Path to the image file to load.
@@ -23,5 +26,9 @@ def ft_load(path: str) -> array:
     if not (format_img == "JPG" or format_img == "JPEG"):
         raise ValueError("Unsupported format.")
     img = img.convert("RGB")
+    img_array = array(img)
 
-    return array(img)
+    print(f"The shape of image is: {img_array.shape}")
+    print(img_array)
+
+    return img_array
