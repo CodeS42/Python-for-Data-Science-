@@ -1,23 +1,17 @@
 from PIL import Image
 from numpy import array
 
+
 def ft_load(path: str) -> array:
     """
-    Load an image from the given file path.
-    Convert it to RGB.
-    Prints
-        - The shape of the loaded image (height, width, channels).
-        - The 3D array
+    Load an image from a file and convert it to an RGB array.
 
-    Parameters
-        path: Path to the image file to load.
+    This function first checks that the provided path is a string and that the
+    image format is supported (JPG or JPEG). It then opens the file, converts
+    the image to RGB mode, and returns it as a 3D array.
 
-    Returns
-        The loaded image as a 3D array.
-
-    Raises
-        TypeError: If the provided path is not a string.
-        ValueError: If the image format is not JPG or JPEG.
+    If the path is invalid or the format is not allowed, an exception is
+    raised.
     """
     if not isinstance(path, str):
         raise TypeError("Path must be a string.")

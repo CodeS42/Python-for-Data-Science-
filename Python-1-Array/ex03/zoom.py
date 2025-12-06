@@ -1,34 +1,31 @@
 from load_image import ft_load
-from numpy import array
 import matplotlib.pyplot as plt
 
 
 def ft_zoom(img, start_y, end_y, start_x, end_x, channel_start, channel_end):
     """
-    Perform zoom on the image array and display it.
+    Extract a zoomed region from an image array and display it.
 
-    Parameters:
-        - img: numpy array of the loaded image
-        - start_y, end_y, start_x, end_x, channel_start, channel_end: integers
-        for slicing
+    This function slices the image using the provided coordinate ranges
+    for height, width, and channels, producing a smaller sub-image.
+    It prints the shape of the resulting array and shows the zoomed region
+    using matplotlib in grayscale.
 
-    Prints:
-        The sliced (zoomed) image array
-
-    Displays:
-        Zoomed image using matplotlib with grayscale
+    The extracted zoomed image is displayed directly.
     """
     zoomed_img = img[start_y:end_y, start_x:end_x, channel_start:channel_end]
     zoomed_img_shape = zoomed_img.shape
-    print(f"New shape after slicing: {zoomed_img_shape} or {zoomed_img_shape[:2]}")
+    print(f"New shape after slicing: {zoomed_img_shape} or \
+{zoomed_img_shape[:2]}")
     print(zoomed_img)
     plt.imshow(zoomed_img[:, :, 0], cmap="gray")
     plt.show()
-    
+
 
 def main():
     """
-    Main function to load an image, display its information, and perform a zoom.
+    Main function to load an image, display its information, and perform
+    a zoom.
 
     - Loads 'animal.jpeg' using ft_load()
     - Prints the original image's shape and pixel values

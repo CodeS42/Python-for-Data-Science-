@@ -1,25 +1,17 @@
 from load_image import ft_load
-import numpy
-from numpy import array
+import numpy as np
 import matplotlib.pyplot as plt
 
 
 def ft_zoom(img, start_y, end_y, start_x, end_x, channel_start, channel_end):
     """
-    Slice a 3D image array according to given indices.
+    Extract a zoomed region from an image array and print information
+    about it.
 
-    Parameters:
-        - img: numpy array representing the image
-        - start_y, end_y: row indices for slicing (height)
-        - start_x, end_x: column indices for slicing (width)
-        - channel_start, channel_end: start and end indices for the channels
-
-    Returns:
-        new_img: sliced 2D image array
-
-    Prints:
-        Shape of the sliced image. If only one channel is selected, also shows
-        the 2D equivalent shape.
+    This function slices the image using the provided coordinate ranges for
+    height, width, and channels, producing a smaller sub-image. It prints the
+    shape and the raw values of the resulting region, then returns its 2D
+    representation by selecting the first channel.
     """
     new_img = img[start_y:end_y, start_x:end_x, channel_start:channel_end]
     new_img_shape = new_img.shape
@@ -30,23 +22,15 @@ def ft_zoom(img, start_y, end_y, start_x, end_x, channel_start, channel_end):
 
 def ft_transpose(img):
     """
-    Transpose a 2D image array, swapping its rows and columns.
+    Transpose a 2D image array by swapping its rows and columns.
 
-    Parameters:
-        img: The input image array with shape (height, width).
-
-    Returns:
-        None: The function prints the transposed image's shape and values,
-              and displays the transposed image using matplotlib.
-
-    Details:
-        - Creates a new array with shape (width, height).
-        - Copies the pixel values so that new_img[x, y] = img[y, x].
-        - Prints the shape of the transposed image.
-        - Prints the pixel values of the transposed image.
-        - Displays the transposed image using a grayscale colormap.
+    This function creates a new array where each pixel at position (y, x)
+    in the original image is moved to position (x, y). The resulting
+    transposed image has its height and width inverted. The function then
+    prints the shape and the pixel values of the new array, and displays
+    the transposed image in grayscale.
     """
-    new_img = numpy.zeros((img.shape[1], img.shape[0]), dtype=img.dtype)
+    new_img = np.zeros((img.shape[1], img.shape[0]), dtype=img.dtype)
     for y in range(img.shape[0]):
         for x in range(img.shape[1]):
             new_img[x, y] = img[y, x]

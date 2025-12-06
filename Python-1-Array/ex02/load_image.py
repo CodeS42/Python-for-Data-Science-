@@ -8,7 +8,7 @@ def ft_load(path: str) -> array:
 
     This function first checks that the provided path is a string and that the
     image format is supported (JPG or JPEG). It then opens the file, converts
-    the image to RGB mode, and returns it as a 3-dimensional array.
+    the image to RGB mode, prints its shape and returns it as a 3D array.
 
     If the path is invalid or the format is not allowed, an exception is
     raised.
