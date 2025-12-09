@@ -28,7 +28,7 @@ def main():
 
     The function calls load() to read the CSV file and then aff_life() to
     display the plot.
-    
+
     Any exceptions encountered during loading or plotting are caught and
     printed.
     """
