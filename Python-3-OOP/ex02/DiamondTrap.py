@@ -1,12 +1,13 @@
 from S1E7 import Baratheon, Lannister
 
+
 class King(Baratheon, Lannister):
     """Class representing the king using multiple inheritance."""
 
     def __init__(self, first_name, is_alive=True):
         """Initialize the king with inherited Baratheon traits."""
         super().__init__(first_name, is_alive)
-    
+
     def set_eyes(self, color):
         """Set the king's eye color."""
         self.eyes = color
